@@ -1,6 +1,7 @@
 import "dotenv/config";
 import http from "node:http"
 import {app} from "./app.js";
+import {db} from "./db/index.js"
 
 const server = http.createServer(app);
 

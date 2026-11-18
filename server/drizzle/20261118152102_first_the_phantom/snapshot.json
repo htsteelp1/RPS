@@ -1,0 +1,252 @@
+{
+  "version": "7",
+  "dialect": "sqlite",
+  "id": "6c706517-d8f5-4fca-93b8-426b0f3dc5de",
+  "prevIds": [
+    "00000000-0000-0000-0000-000000000000"
+  ],
+  "ddl": [
+    {
+      "name": "games",
+      "entityType": "tables"
+    },
+    {
+      "name": "games_to_players",
+      "entityType": "tables"
+    },
+    {
+      "name": "moves",
+      "entityType": "tables"
+    },
+    {
+      "name": "players",
+      "entityType": "tables"
+    },
+    {
+      "name": "rounds",
+      "entityType": "tables"
+    },
+    {
+      "table": "games",
+      "name": "id",
+      "type": "integer",
+      "notNull": false,
+      "autoincrement": true,
+      "default": null,
+      "generated": null,
+      "entityType": "columns"
+    },
+    {
+      "table": "games_to_players",
+      "name": "playerId",
+      "type": "integer",
+      "notNull": true,
+      "autoincrement": false,
+      "default": null,
+      "generated": null,
+      "entityType": "columns"
+    },
+    {
+      "table": "games_to_players",
+      "name": "gameId",
+      "type": "integer",
+      "notNull": true,
+      "autoincrement": false,
+      "default": null,
+      "generated": null,
+      "entityType": "columns"
+    },
+    {
+      "table": "moves",
+      "name": "id",
+      "type": "integer",
+      "notNull": false,
+      "autoincrement": true,
+      "default": null,
+      "generated": null,
+      "entityType": "columns"
+    },
+    {
+      "table": "moves",
+      "name": "roundId",
+      "type": "integer",
+      "notNull": true,
+      "autoincrement": false,
+      "default": null,
+      "generated": null,
+      "entityType": "columns"
+    },
+    {
+      "table": "moves",
+      "name": "player_id",
+      "type": "integer",
+      "notNull": true,
+      "autoincrement": false,
+      "default": null,
+      "generated": null,
+      "entityType": "columns"
+    },
+    {
+      "table": "moves",
+      "name": "action",
+      "type": "integer",
+      "notNull": true,
+      "autoincrement": false,
+      "default": null,
+      "generated": null,
+      "entityType": "columns"
+    },
+    {
+      "table": "players",
+      "name": "id",
+      "type": "integer",
+      "notNull": false,
+      "autoincrement": true,
+      "default": null,
+      "generated": null,
+      "entityType": "columns"
+    },
+    {
+      "table": "rounds",
+      "name": "id",
+      "type": "integer",
+      "notNull": false,
+      "autoincrement": true,
+      "default": null,
+      "generated": null,
+      "entityType": "columns"
+    },
+    {
+      "table": "rounds",
+      "name": "gameId",
+      "type": "integer",
+      "notNull": true,
+      "autoincrement": false,
+      "default": null,
+      "generated": null,
+      "entityType": "columns"
+    },
+    {
+      "table": "games_to_players",
+      "name": "fk_games_to_players_playerId_players_id_fk",
+      "columns": [
+        "playerId"
+      ],
+      "tableTo": "players",
+      "columnsTo": [
+        "id"
+      ],
+      "onUpdate": "NO ACTION",
+      "onDelete": "NO ACTION",
+      "nameExplicit": false,
+      "entityType": "fks"
+    },
+    {
+      "table": "games_to_players",
+      "name": "fk_games_to_players_gameId_games_id_fk",
+      "columns": [
+        "gameId"
+      ],
+      "tableTo": "games",
+      "columnsTo": [
+        "id"
+      ],
+      "onUpdate": "NO ACTION",
+      "onDelete": "NO ACTION",
+      "nameExplicit": false,
+      "entityType": "fks"
+    },
+    {
+      "table": "moves",
+      "name": "fk_moves_roundId_rounds_id_fk",
+      "columns": [
+        "roundId"
+      ],
+      "tableTo": "rounds",
+      "columnsTo": [
+        "id"
+      ],
+      "onUpdate": "NO ACTION",
+      "onDelete": "NO ACTION",
+      "nameExplicit": false,
+      "entityType": "fks"
+    },
+    {
+      "table": "moves",
+      "name": "fk_moves_player_id_players_id_fk",
+      "columns": [
+        "player_id"
+      ],
+      "tableTo": "players",
+      "columnsTo": [
+        "id"
+      ],
+      "onUpdate": "NO ACTION",
+      "onDelete": "NO ACTION",
+      "nameExplicit": false,
+      "entityType": "fks"
+    },
+    {
+      "table": "rounds",
+      "name": "fk_rounds_gameId_games_id_fk",
+      "columns": [
+        "gameId"
+      ],
+      "tableTo": "games",
+      "columnsTo": [
+        "id"
+      ],
+      "onUpdate": "NO ACTION",
+      "onDelete": "NO ACTION",
+      "nameExplicit": false,
+      "entityType": "fks"
+    },
+    {
+      "table": "games_to_players",
+      "name": "games_to_players_pk",
+      "columns": [
+        "playerId",
+        "gameId"
+      ],
+      "nameExplicit": false,
+      "entityType": "pks"
+    },
+    {
+      "table": "games",
+      "name": "games_pk",
+      "columns": [
+        "id"
+      ],
+      "nameExplicit": false,
+      "entityType": "pks"
+    },
+    {
+      "table": "moves",
+      "name": "moves_pk",
+      "columns": [
+        "id"
+      ],
+      "nameExplicit": false,
+      "entityType": "pks"
+    },
+    {
+      "table": "players",
+      "name": "players_pk",
+      "columns": [
+        "id"
+      ],
+      "nameExplicit": false,
+      "entityType": "pks"
+    },
+    {
+      "table": "rounds",
+      "name": "rounds_pk",
+      "columns": [
+        "id"
+      ],
+      "nameExplicit": false,
+      "entityType": "pks"
+    }
+  ],
+  "renames": []
+}
